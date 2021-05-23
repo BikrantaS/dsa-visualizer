@@ -18,12 +18,16 @@ function getRandomInt(min, max) {
 console.log(getRandom(2, 20));
 console.log(getRandomInt(2, 20));
 
+// var numbers = [];
+const tempArray = [];
+
 
 function Block() {
 
     let [num, setNum] = useState();
-    let [r1, setR1] = useState();
-    let [r2, setR2] = useState();
+    let [r1, setR1] = useState(0);
+    let [r2, setR2] = useState(21);
+    let [numbers, setNumbers] = useState([]);
 
     return (
         <div className="block">
@@ -45,17 +49,21 @@ function Block() {
                         setR2(r2 = document.querySelector('#range2').value);
 
                         setNum(num = getRandomInt(r1, r2));
+                        // numbers.push(num);
+                        tempArray.push(num);
                         console.log(num);
+                        setNumbers(tempArray);
+                        console.log(numbers);
                     }
                     }
                     className="btn check">Generate
                 </button>
-
-                <div className="display">
-                    <p>{num}</p>
-                </div>
+            </div>
 
 
+            <div className="display">
+                <h4>Random number:</h4>
+                <h3>{num}</h3>
             </div>
         </div >
     )
