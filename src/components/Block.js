@@ -70,12 +70,13 @@ function Block() {
                 <h3>{num}</h3>
             </div>
 
+            {/* displays all the generated random numbers */}
             <div className="displayNumbers">
                 <h2>The numbers are:</h2>
-                <p> {numbers[0]}</p>
-                {/* {
-                    numbers.forEach(number => (<p> {number}</p>))
-                } */}
+                {
+                    numbers.map(number => (
+                        <p className="values">{number}  </p>
+                    ))}
             </div>
 
         </div >
