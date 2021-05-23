@@ -1,0 +1,10 @@
+.block{
+    
+    border: 0.1em solid black;
+    border-radius: 1em;
+    margin: 0.25em 0.25em;
+}
+
+.input{
+    display: flex;
+}
