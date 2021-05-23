@@ -3,10 +3,9 @@ import '../styles/Block.css'
 
 
 
-
-function getRandom(min, max) {
-    return Math.random() * (max - min) + min;
-}
+// function getRandom(min, max) {
+//     return Math.random() * (max - min) + min;
+// }
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -15,10 +14,9 @@ function getRandomInt(min, max) {
 }
 
 
-console.log(getRandom(2, 20));
-console.log(getRandomInt(2, 20));
-
 const tempArray = [];//to store random numbers
+
+
 
 
 function Block() {
@@ -27,6 +25,15 @@ function Block() {
     let [r1, setR1] = useState(0);
     let [r2, setR2] = useState(101);
     let [numbers, setNumbers] = useState([]);
+
+    // handles event when clicked on
+    const handleClick = () => {
+        setNum(num = getRandomInt(r1, r2));
+        tempArray.push(num);
+        console.log(num);
+        setNumbers(numbers = tempArray);
+        console.log(numbers);
+    }
 
     return (
         <div className="block">
@@ -51,11 +58,7 @@ function Block() {
                 {/* submit the ranges */}
                 <button
                     onClick={() => {
-                        setNum(num = getRandomInt(r1, r2));
-                        tempArray.push(num);
-                        console.log(num);
-                        setNumbers(numbers = tempArray);
-                        console.log(numbers);
+                        handleClick();
                     }}
                     className="btn check">Generate
                 </button>
@@ -65,6 +68,14 @@ function Block() {
             <div className="display">
                 <h4>Random number:</h4>
                 <h3>{num}</h3>
+            </div>
+
+            <div className="displayNumbers">
+                <h2>The numbers are:</h2>
+                <p> {numbers[0]}</p>
+                {/* {
+                    numbers.forEach(number => (<p> {number}</p>))
+                } */}
             </div>
 
         </div >
