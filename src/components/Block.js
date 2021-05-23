@@ -26,7 +26,7 @@ function Block() {
 
     let [num, setNum] = useState();
     let [r1, setR1] = useState(0);
-    let [r2, setR2] = useState(21);
+    let [r2, setR2] = useState(101);
     let [numbers, setNumbers] = useState([]);
 
     return (
@@ -37,16 +37,26 @@ function Block() {
 
 
                 <p className="enter">Enter Range:</p>
-                <input type="number" id="range1" />
+                <input type="number" id="range1" value={r1}
+                    onChange={() => {
+                        setR1(r1 = document.querySelector('#range1').value);
+
+                    }
+
+                    } />
                 <p className="enter">to</p>
-                <input type="number" id="range2" />
+                <input type="number" id="range2" value={r2}
+                    onChange={() => {
+
+                        setR2(r2 = document.querySelector('#range2').value);
+                    }
+                    } />
 
                 <button
                     onClick={() => {
                         // let range1 = document.querySelector('#range1').value;
                         // let range2 = document.querySelector('#range2').value;
-                        setR1(r1 = document.querySelector('#range1').value);
-                        setR2(r2 = document.querySelector('#range2').value);
+
 
                         setNum(num = getRandomInt(r1, r2));
                         // numbers.push(num);
