@@ -18,8 +18,7 @@ function getRandomInt(min, max) {
 console.log(getRandom(2, 20));
 console.log(getRandomInt(2, 20));
 
-// var numbers = [];
-const tempArray = [];
+const tempArray = [];//to store random numbers
 
 
 function Block() {
@@ -33,48 +32,41 @@ function Block() {
         <div className="block">
             <h1>BLOCK {getRandomInt(2, 20)}</h1>
 
+
+            {/* input block */}
             <div className="input">
 
-
+                {/* take input from user */}
                 <p className="enter">Enter Range:</p>
                 <input type="number" id="range1" value={r1}
                     onChange={() => {
                         setR1(r1 = document.querySelector('#range1').value);
-
-                    }
-
-                    } />
+                    }} />
                 <p className="enter">to</p>
                 <input type="number" id="range2" value={r2}
                     onChange={() => {
-
                         setR2(r2 = document.querySelector('#range2').value);
-                    }
-                    } />
+                    }} />
 
+                {/* submit the ranges */}
                 <button
                     onClick={() => {
-                        // let range1 = document.querySelector('#range1').value;
-                        // let range2 = document.querySelector('#range2').value;
-
-
                         setNum(num = getRandomInt(r1, r2));
-                        // numbers.push(num);
                         tempArray.push(num);
                         console.log(num);
-                        setNumbers(tempArray);
+                        setNumbers(numbers = tempArray);
                         console.log(numbers);
-                    }
-                    }
+                    }}
                     className="btn check">Generate
                 </button>
             </div>
 
-
+            {/* display the current generated random number */}
             <div className="display">
                 <h4>Random number:</h4>
                 <h3>{num}</h3>
             </div>
+
         </div >
     )
 }
