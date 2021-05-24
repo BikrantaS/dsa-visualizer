@@ -14,5 +14,9 @@
     display:flex;
 }
 .displayNumbers{
-    display: flex;
+    display: block;
 }
+
+/* .values{
+    margin: 1em;
+} */
