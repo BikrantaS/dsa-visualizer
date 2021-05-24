@@ -75,8 +75,8 @@ function Block() {
                 <h2>The numbers are:</h2>
                 <br />
                 {
-                    numbers.map(number => (
-                        <span className="values" key={number.id}>
+                    numbers.map((number, index) => (
+                        <span className="values" key={index}>
                             {number} &nbsp;
                         </span >
                     ))}
