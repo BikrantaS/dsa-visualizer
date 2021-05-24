@@ -46,14 +46,10 @@ function Block() {
                 {/* take input from user */}
                 <p className="enter">Enter Range:</p>
                 <input type="number" id="range1" value={r1}
-                    onChange={() => {
-                        setR1(r1 = document.querySelector('#range1').value);
-                    }} />
+                    onChange={e => setR1(e.target.value)} />
                 <p className="enter">to</p>
                 <input type="number" id="range2" value={r2}
-                    onChange={() => {
-                        setR2(r2 = document.querySelector('#range2').value);
-                    }} />
+                    onChange={e => setR2(e.target.value)} />
 
                 {/* submit the ranges */}
                 <button
@@ -84,10 +80,9 @@ function Block() {
             </div>
 
             <div className="bars">
-
                 {
                     numbers.map((number, index) => (
-                        <div className="bar" key={index} style={{ height: "30px" }} >
+                        <div className="bar" key={index} style={{ height: "10px" }} >
                             {number} &nbsp;
                         </div >
                     ))
