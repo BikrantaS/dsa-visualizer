@@ -20,3 +20,13 @@
 /* .values{
     margin: 1em;
 } */
+
+.bars{
+    display: flex;
+}
+
+.bar{
+    /* display:inline; */
+    border:2px solid rgb(0, 106, 192);
+    margin: 0.2%;
+    flex-basis: 1.5em;}
