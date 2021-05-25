@@ -67,12 +67,13 @@ function Block() {
             </div>
 
             {/* displays all the generated random numbers */}
+            <h2>The numbers are:</h2>
             <div className="displayNumbers">
-                <h2>The numbers are:</h2>
+
 
                 {
                     numbers.map((number, index) => (
-                        <span className="values" key={index}>{number} &nbsp;</span >
+                        <div className="values" key={index}>{number},</div >
                     ))
                 }
 
@@ -82,8 +83,8 @@ function Block() {
             <div className="bars">
                 {
                     numbers.map((number, index) => (
-                        <div className="bar" key={index} style={{ height: "10px" }} >
-                            {number} &nbsp;
+                        <div className="bar" key={index} style={{ height: 0.2 * number + "em" }} >
+                            {/* {number} &nbsp; */}
                         </div >
                     ))
                 }

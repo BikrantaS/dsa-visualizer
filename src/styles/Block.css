@@ -14,19 +14,27 @@
     display:flex;
 }
 .displayNumbers{
-    display: block;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-/* .values{
-    margin: 1em;
-} */
+.values{
+    /* flex-grow: 4;
+    flex-wrap: wrap; */
+}
 
 .bars{
     display: flex;
+    /* justify-content:end; */
+    align-items: flex-end;
 }
 
 .bar{
     /* display:inline; */
-    border:2px solid rgb(0, 106, 192);
-    margin: 0.2%;
-    flex-basis: 1.5em;}
+    background-color: rgb(0, 212, 142);
+    border:0.02em solid rgb(0, 106, 192);
+    margin: 0;
+    flex-basis: 1.5em;
+    width: auto;
+}
