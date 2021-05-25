@@ -21,10 +21,12 @@ const tempArray = [];//to store random numbers
 
 function Block() {
 
+
     let [num, setNum] = useState();
     let [r1, setR1] = useState(0);
     let [r2, setR2] = useState(101);
     let [numbers, setNumbers] = useState([]);
+    let [color, setColor] = useState("Green");
 
     // handles event when clicked on
     const handleClick = () => {
@@ -35,9 +37,26 @@ function Block() {
         console.log(numbers);
     }
 
+    const handleSort = () => {
+        let n = numbers.length;
+        for (let i = 0; i < n - 1; i++) {
+            let swapped = false;
+            for (let j = 0; j < n - i - 1; j++) {
+                if (numbers[j] > numbers[j + 1]) {
+                    [numbers[j], numbers[j + 1]] = [numbers[j + 1], numbers[j]];
+                    setColor(color = "blue");
+
+                    swapped = true;
+                }
+            }
+            if (swapped === false)
+                break;
+        }
+    }
+
     return (
         <div className="block">
-            <h1>BLOCK {getRandomInt(2, 20)}</h1>
+            <h1>BLOCK</h1>
 
 
             {/* input block */}
@@ -58,6 +77,17 @@ function Block() {
                     }}
                     className="btn check">Generate
                 </button>
+
+
+            </div>
+
+
+            <div className="SortOptions">
+                <button
+                    onClick={() => {
+                        handleSort();
+                    }}
+                    className="sort">Sort</button>
             </div>
 
             {/* display the current generated random number */}
@@ -83,7 +113,7 @@ function Block() {
             <div className="bars">
                 {
                     numbers.map((number, index) => (
-                        <div className="bar" key={index} style={{ height: 0.2 * number + "em" }} >
+                        <div className="bar" key={index} style={{ height: 0.2 * number + "em", backgroundColor: color }} >
                             {/* {number} &nbsp; */}
                         </div >
                     ))
