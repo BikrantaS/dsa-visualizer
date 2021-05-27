@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <h1>VISUALIZER</h1>
+      <h1>DSA-VISUALIZER</h1>
       <Block />
     </div>
   );

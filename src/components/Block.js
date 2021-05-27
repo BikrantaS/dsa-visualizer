@@ -26,7 +26,7 @@ function Block() {
     let [r1, setR1] = useState(0);
     let [r2, setR2] = useState(101);
     let [numbers, setNumbers] = useState([]);
-    let [color, setColor] = useState("Green");
+    let [colorbar, setColor] = useState("Green");
 
     // handles event when clicked on
     const handleClick = () => {
@@ -37,6 +37,8 @@ function Block() {
         console.log(numbers);
     }
 
+
+
     const handleSort = () => {
         let n = numbers.length;
         for (let i = 0; i < n - 1; i++) {
@@ -44,8 +46,7 @@ function Block() {
             for (let j = 0; j < n - i - 1; j++) {
                 if (numbers[j] > numbers[j + 1]) {
                     [numbers[j], numbers[j + 1]] = [numbers[j + 1], numbers[j]];
-                    setColor(color = "blue");
-
+                    setColor(colorbar = "blue");
                     swapped = true;
                 }
             }
@@ -56,7 +57,7 @@ function Block() {
 
     return (
         <div className="block">
-            <h1>BLOCK</h1>
+            <h1>Bubble Sort</h1>
 
 
             {/* input block */}
@@ -113,7 +114,7 @@ function Block() {
             <div className="bars">
                 {
                     numbers.map((number, index) => (
-                        <div className="bar" key={index} style={{ height: 0.2 * number + "em", backgroundColor: color }} >
+                        <div className="bar" key={index} style={{ height: 0.2 * number + "em", backgroundColor: colorbar }} >
                             {/* {number} &nbsp; */}
                         </div >
                     ))
